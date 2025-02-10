@@ -1,13 +1,11 @@
-from collections import Counter
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        counter=Counter(nums)
+        s=set(nums)
         a=[]
         for i in range(1,len(nums)+1):
-            if counter[i]==0:
-                a.append(i)
-            else:
+            if i in s:
                 continue
+            else:
+                a.append(i)
         return a
 
-        
